@@ -16,7 +16,6 @@ gem 'pg'
 gem 'pg_search'
 gem 'sass-rails', '~> 4.0.3'
 gem 'thin'
-gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'spring',        group: :development
