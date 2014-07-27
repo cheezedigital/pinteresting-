@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
 
-end 
+  root "site#home"
+  get "about" => "site#about"
+
+end
