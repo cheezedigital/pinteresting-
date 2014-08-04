@@ -12,6 +12,7 @@ gem 'font-awesome-sass'
 gem 'friendly_id'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem "paperclip", "~> 4.1"
 gem 'pg'
 gem 'pg_search'
 gem 'sass-rails', '~> 4.0.3'
