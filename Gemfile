@@ -13,6 +13,8 @@ gem 'font-awesome-sass'
 gem 'friendly_id'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem 'masonry-rails'
 gem "paperclip", "~> 4.1"
 gem 'pg'
 gem 'pg_search'
@@ -30,7 +32,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'factory_girl_rails'
   gem 'ffaker'
