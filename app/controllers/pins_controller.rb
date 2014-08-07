@@ -18,11 +18,11 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = current_user.pins.build(params[:id])
+    @pin = current_user.pins.build(pin_params)
     if @pin.save
       redirect_to @pin, notice: 'Pin Created, Yo!'
     else
-      render_action 'new'
+      render 'new'
     end
   end
 
@@ -30,7 +30,7 @@ class PinsController < ApplicationController
     if @pin.update(pin_params)
       redirect_to @pin, notice: 'Pin was successfully updated'
     else
-      render action: 'edit'
+      render 'edit'
     end
   end
 
@@ -40,16 +40,16 @@ class PinsController < ApplicationController
   end
 
   private
-    def set_pin
-      @pin = Pin.find(params[:id])
-    end
-
-    def correct_user
-      @pin = current_user.pins.find_by(id: params[:id])
-      redirect_to pins_path, notice: "not authorized to edit this pin" if @pin.nil?
-
-    def pin_params
-      params.require(:pin).permit(:description, :image)
-    end
+  def set_pin
+    @pin = Pin.find(params[:id])
   end
+
+  def correct_user
+    @pin = current_user.pins.find_by(id: params[:id])
+    redirect_to pins_path, notice: "not authorized to edit this pin" if @pin.nil?
+  end
+  def pin_params
+    params.require(:pin).permit(:description, :image)
+  end
+
 end
